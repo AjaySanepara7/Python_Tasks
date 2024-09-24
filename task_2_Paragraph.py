@@ -17,8 +17,3 @@ if x == "y" or x == "Y":
         new_para = re.sub(word, new_word, paragraph, flags=re.IGNORECASE)
 
     print(new_para)
-
-
-
-
-
