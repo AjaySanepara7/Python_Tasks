@@ -8,7 +8,8 @@ parser.add_argument('--list', help='--list', action='store_true')
 parser.add_argument('--file', help='--file', action='store_true')
 parser.add_argument('--folder', help='--file', action='store_true')
 parser.add_argument('--move', action='store_true', help='--move')
-parser.add_argument('--file_path', type=str, help='--file file/path')
+parser.add_argument('--file_path', type=str, help='--file_path file/path')
+parser.add_argument('--folder_path', type=str, help='--folder_path folder/path')
 parser.add_argument("--destination", type=str, help="--destination destination/path")
 
 directory = os.getcwd()
@@ -40,7 +41,24 @@ if args.move:
     if not args.file_path or not args.destination:
         print("Error: both file path and destination are required")
     else:
-        shutil.move(args.file_path, args.destination)
+        if not os.path.exists(args.file_path):
+            print(f"Error: The file{args.file_path} does not exist")
+        elif not os.path.isfile(args.file_path):
+            print(f"Error: The file{args.file_path} is not a valid file")
+        elif not os.path.isdir(args.destination):
+            print(f"Error: The destination {args.destination} is not a valid directory")
+        else:
+            shutil.move(args.file_path, args.destination)
 
-print(args.file_path,args.destination)
-# print(os.path.dirname(__file__))
+if args.move:
+    if not args.folder_path or not args.destination:
+        print("Error: both file path and destination are required")
+    else:
+        if not os.path.exists(args.folder_path):
+            print(f"Error: The file{args.folder_path} does not exist")
+        elif not os.path.isfile(args.folder_path):
+            print(f"Error: The file{args.folder_path} is not a valid file")
+        elif not os.path.isdir(args.destination):
+            print(f"Error: The destination {args.destination} is not a valid directory")
+        else:
+            shutil.move(args.folder_path, args.destination)
