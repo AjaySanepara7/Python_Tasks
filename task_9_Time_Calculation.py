@@ -56,9 +56,6 @@ class Time_Difference(Time_Calculator):
               f"{(self.formatted_time - self.time2_delta).time()}")
 
 
-
-
-
 alltime = input("Enter times in HH:MM\n").split()
 
 for time in alltime:
@@ -109,7 +106,8 @@ while choice == 0:
         scnd_add_value_delta = datetime.timedelta(hours=hour2, minutes=min2, seconds=sec2)
 
         add_time_value = Time_Add(time=fst_ad_tm_value, formatted_time=first_add_value,Time_in_hour_minute = first_add_value_time,\
-                                  time2 = scnd_ad_tm_value, formatted_time2 = scnd_add_value, Time_in_hour_minute2=scnd_add_value_time, time2_delta=scnd_add_value_delta)
+                                  time2 = scnd_ad_tm_value, formatted_time2 = scnd_add_value, Time_in_hour_minute2=scnd_add_value_time,\
+                                  time2_delta=scnd_add_value_delta)
         
         add_time_value.print_new_time()
 
@@ -131,7 +129,8 @@ while choice == 0:
         scnd_sbt_value_delta = datetime.timedelta(hours=hour4, minutes=min4, seconds=sec4)
 
         time_diff_value = Time_Difference(time=fst_sbt_tm_value, formatted_time=first_sbt_value, Time_in_hour_minute=first_sbt_value_time,\
-                                          time2 = scnd_sbt_tm_value, formatted_time2 = scnd_sbt_value, Time_in_hour_minute2=scnd_sbt_value_time, time2_delta=scnd_sbt_value_delta)
+                                          time2 = scnd_sbt_tm_value, formatted_time2 = scnd_sbt_value, Time_in_hour_minute2=scnd_sbt_value_time,\
+                                          time2_delta=scnd_sbt_value_delta)
 
         time_diff_value.print_new_time()
 
