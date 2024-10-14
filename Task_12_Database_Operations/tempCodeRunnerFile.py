@@ -1,0 +1,1 @@
+add_column_postgres(db_name,tbl_name,column_data)
